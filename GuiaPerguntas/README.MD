@@ -1,0 +1,1 @@
+Plataforma de perguntas e respostas utilizando node e mysql;
