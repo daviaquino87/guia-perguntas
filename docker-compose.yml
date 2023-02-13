@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  database:
+    image: postgres
+    container_name: database_guiaperguntas
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=guiaperguntas
+      - POSTGRES_PASSWORD=guiaperguntas
+      - POSTGRES_DB=guiaperguntas
+    volumes:
+      - pgdata:/data/postgres
+  app:
+    build: .
+    container_name: guiaperguntas
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/app
+
+volumes:
+  pgdata:
+    driver: local
