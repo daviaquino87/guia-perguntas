@@ -1,20 +1,12 @@
+require("./database");
 const express = require("express");
 
 const app = express();
 const path = require("path");
 const bodyparser = require("body-parser");
-const conection = require("./database/database");
-const pergunta = require("./database/Pergunta");
-const resposta = require("./database/Resposta");
 
-conection
-  .authenticate()
-  .then(() => {
-    console.log("conexão feita");
-  })
-  .catch((msgerro) => {
-    console.log("erro");
-  });
+const pergunta = require("./models/Pergunta");
+const resposta = require("./models/Resposta");
 
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
