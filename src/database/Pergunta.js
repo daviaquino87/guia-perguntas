@@ -11,8 +11,6 @@ const pergunta = conection.define("perguntas", {
     allowNull: false,
   },
 });
-pergunta.sync().then(() => {
-  console.log("tabela de perguntas criada");
-});
+pergunta.sync();
 
 module.exports = pergunta;

@@ -12,8 +12,6 @@ const resposta = conection.define("respostas", {
   },
 });
 
-resposta.sync().then(() => {
-  console.log("tabela de respostas criada");
-});
+resposta.sync();
 
 module.exports = resposta;
